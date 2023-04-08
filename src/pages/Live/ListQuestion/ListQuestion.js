@@ -596,7 +596,7 @@ function ListQuestion() {
         if (answeredCount === questions.length) {
             // submit answers
             try {
-                const response = await fetch('http://127.0.0.1:5000/submit_answers', {
+                const response = await fetch('https://api-web-flask.onrender.com/submit_answers', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

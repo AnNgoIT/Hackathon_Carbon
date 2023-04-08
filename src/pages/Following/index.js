@@ -8,7 +8,7 @@ function Following() {
     const [learningPath, setLearningPath] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:5000/get_Learning_Path')
+        fetch('https://api-web-flask.onrender.com/get_Learning_Path')
             .then((res) => res.json())
             .then((data) => setLearningPath(data));
     }, []);
