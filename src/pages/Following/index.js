@@ -27,7 +27,7 @@ function Following() {
         <div>
             <h1>Learning Path</h1>
 
-            <h3>Email: {data[0]}@student.hcmute.edu.vn</h3>
+            <h3>Email: {data[0]}0@student.hcmute.edu.vn</h3>
             {/* <p>{learningPath}</p> */}
             <ul>
                 Semester 1
