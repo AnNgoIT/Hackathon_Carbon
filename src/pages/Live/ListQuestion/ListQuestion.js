@@ -646,7 +646,7 @@ function ListQuestion() {
                     onAnswerSelected={handleAnswerSelected}
                 />
             ))}
-            <Button type="submit" disabled={buttonDisabled}>
+            <Button type="submit" to="/following" disabled={buttonDisabled}>
                 Submit
             </Button>
         </form>

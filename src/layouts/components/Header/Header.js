@@ -133,7 +133,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
+                                src="https://logowik.com/content/uploads/images/carbon8576.jpg"
                                 alt="Nguyen Van A"
                             />
                         ) : (

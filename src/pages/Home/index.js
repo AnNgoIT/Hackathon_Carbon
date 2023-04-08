@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 import Button from '~/components/Button';
+import Image from '~/assets/images/3969830.jpg';
 const cx = classNames.bind(styles);
 
 function Home() {
@@ -12,6 +13,8 @@ function Home() {
                     <h4 className={cx('tilte1')}>Use data gathered from entrance and exit tests, questions about learners' interests and goals, to identify what skills and knowledge students have and need to improve.</h4>
 
                     <Button className={cx('button_test')} to="/live">Take the test!</Button>
+
+                    <img className={cx('image_main')} src={Image} alt='Anh'/>
                 </div>
             </div>
         </div>

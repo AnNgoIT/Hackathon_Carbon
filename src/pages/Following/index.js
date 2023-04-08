@@ -5,70 +5,68 @@ import { useState, useEffect } from 'react';
 const cx = classNames.bind(styles);
 
 function Following() {
-    const [learningPath, setLearningPath] = useState([]);
+    const [data, setData] = useState([]);
+
+    const Semester1 = data.slice(1, 4);
+    const Semester2 = data.slice(4, 7);
+    const Semester3 = data.slice(7, 10);
+    const Semester4 = data.slice(10, 13);
+    const Semester5 = data.slice(13, 16);
+    const Semester6 = data.slice(16, 19);
 
     useEffect(() => {
         fetch('https://api-web-flask.onrender.com/get_Learning_Path')
             .then((res) => res.json())
-            .then((data) => setLearningPath(data));
+            .then((data) =>
+                setData(data.map((item) => item.slice(1, -1).replace(/"/g, '').split(':').splice(1).join(':'))),
+            );
     }, []);
 
+    // const data = JSON.parse(learningPath);
     return (
         <div>
             <h1>Learning Path</h1>
+
+            <h3>Email: {data[0]}@student.hcmute.edu.vn</h3>
+            {/* <p>{learningPath}</p> */}
             <ul>
-                {learningPath.map((path, index) => (
-                    <li key={index}>{path}</li>
+                Semester 1
+                {Semester1.map((item) => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+            <ul>
+                Semester 2
+                {Semester2.map((item) => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+            <ul>
+                Semester 3
+                {Semester3.map((item) => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+            <ul>
+                Semester 4
+                {Semester4.map((item) => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+            <ul>
+                Semester 5
+                {Semester5.map((item) => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+            <ul>
+                Semester 6
+                {Semester6.map((item) => (
+                    <li>{item}</li>
                 ))}
             </ul>
         </div>
     );
-    // const semester1 = subjects.slice(0, 3);
-    // const semester2 = subjects.slice(3, 6);
-    // const semester3 = subjects.slice(6, 9);
-    // const semester4 = subjects.slice(9, 12);
-    // const semester5 = subjects.slice(12, 15);
-    // const semester6 = subjects.slice(15, 18);
-    // return (
-    //     <div className={cx('wrapper')}>
-    //         <div className={cx('inner')}>
-    //             <div className={cx('container')}>
-    //                 <h2 className={cx('page-title')}>Learning path </h2>
-    //                 <div>
-    //                     <ul>Semester 1</ul>
-    //                     {semester1.map((subject, index) => (
-    //                         <li key={index}>{subject}</li>
-    //                     ))}
-
-    //                     <ul>Semester 2</ul>
-    //                     {semester2.map((subject, index) => (
-    //                         <li key={index}>{subject}</li>
-    //                     ))}
-
-    //                     <ul>Semester 3</ul>
-    //                     {semester3.map((subject, index) => (
-    //                         <li key={index}>{subject}</li>
-    //                     ))}
-
-    //                     <ul>Semester 4</ul>
-    //                     {semester4.map((subject, index) => (
-    //                         <li key={index}>{subject}</li>
-    //                     ))}
-
-    //                     <ul>Semester 5</ul>
-    //                     {semester5.map((subject, index) => (
-    //                         <li key={index}>{subject}</li>
-    //                     ))}
-
-    //                     <ul>Semester 6</ul>
-    //                     {semester6.map((subject, index) => (
-    //                         <li key={index}>{subject}</li>
-    //                     ))}
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    // );
 }
 
 export default Following;
